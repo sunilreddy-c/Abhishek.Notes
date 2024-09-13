@@ -1,0 +1,56 @@
+we always start with shell script like
+#!/bin/bash
+always we need mentioned the author of the file 
+#author sunil
+#date 12-09-2024
+#type shell
+#version 0.1---->by using above comments we define the all owner details
+
+set -x # debug mode 
+set -e # thisnis used for script exits when there is an error.
+set -o pipefile # is used to if there is any error in the pipe command it will through the error
+
+#---it will ignore the lines its desnt execute the files
+
+df -h ---it will shoes dixk space
+free -g -- it will shows free memory
+nproc -- to printing the resources
+ps -ef -- (it will show the all processor details which are running in the linux server)
+
+grep amazon |awk -F" " '{print $2}'--- for getting a procees id for that amazon files
+
+set -x ---it is used to execute the script in debug mode (very useful to understand the script)
+set +x ---it is used to stop the script in debug mode
+
+how to find how many process are running in a server
+command is --->ps -ef (it will show the all processor details which are running in the linux server)
+
+in this ps -ef file i will find only which the name starts with amazon: for that command is (grep)
+--->ps -ef | grep "amazon" (pipe) this command is used to get the output from first command and send it to the second command.
+
+manager ask only a amazon processor id only:
+---------------------------------------------
+in this situation we can use (awk--pattern scanning and processing language ) command --->
+
+this is interview question:
+--------------------------
+date | echo "this is "---> whats the uotput of this command --> it gives only a this 
+reason:---> beacuse date command is system default command this send output to stdin from stdin pipe will not able to receive the output from the stdin
+  pipe will not receive the information from the stdin command -- pipe only receive the information from the second command
+ 
+
+ 
+curl command: curl command retrive the information from the internet | grep error ---> to get the all error logs
+------------
+
+wget command :wget command is used to download the content from the internet.
+-------------
+
+find command :find command is used to find a file which is locaed in somewhere in the server 
+-------------
+example : sudo find / -name pam.d -- here (/) indicates the home directory of root
+
+interview questions for shell script:
+------------------------------------
+
+
